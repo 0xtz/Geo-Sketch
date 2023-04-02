@@ -4,7 +4,7 @@ Geo Sketch is a React app that allows users to draw shapes on a map and export t
 
 ## Usage
 
-To use Geo Sketch, simply select the desired shape from the toolbar on the left and draw it on the map. Once you've drawn the shape, you can export it as a PDF by clicking the "Export PDF" button. 
+To use Geo Sketch, simply select the desired shape from the toolbar on the left and draw it on the map. Once you've drawn the shape, you can export it as a PDF by clicking the "Export PDF" button.
 
 ## Contributing
 
@@ -12,7 +12,7 @@ If you find any bugs or issues with the app, please feel free to open an issue o
 
 ## Preview
 
-![Geo Sketch Preview]('./images/preview01.png')
+![Geo Sketch Preview](images/preview01.png)
 
 ## License
 
