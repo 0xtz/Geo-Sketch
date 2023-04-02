@@ -1,23 +1,26 @@
 import React from "react";
 
-import Map from "./components/Map";
-import Info from "./components/Info";
+import { Routes, Route } from "react-router-dom";
+
+import HomePage from "./HomePage";
+import Preview from "./Preview";
 
 // map style
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
 
-import "./App.css";
+import "./App.scss";
 
 export default function App() {
   return (
-    <div className="container">
-      <div className="leaflet-container">
-        <Map />
-      </div>
-      <div className="info">
-        <Info />
-      </div>
-    </div>
+    <>
+      <Routes>
+        {/* ROUTES */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/preview" element={<Preview />} />
+        {/* 404 */}
+        <Route path="*" element={<div>404</div>} />
+      </Routes>
+    </>
   );
 }

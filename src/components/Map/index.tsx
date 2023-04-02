@@ -7,9 +7,11 @@ import {
 } from "react-leaflet";
 import { EditControl } from "react-leaflet-draw";
 import { LatLngExpression } from "leaflet";
-import { useCordsStore } from "../../store/cords";
+import { useCordsStore, userMapCenter } from "../../store/cords";
 
 export default function Map() {
+  const { userCoords } = userMapCenter();
+
   const [coords, setCoords] = useState<LatLngExpression[] | null>(null);
 
   function handleCreated(e: any) {
@@ -24,14 +26,14 @@ export default function Map() {
   // handlePolygonComplete
   function handlePolygonComplete() {
     useCordsStore.setState({ shapeCoords: coords });
-    // export to zustand
-
-    console.log("handlePolygonComplete", coords);
   }
 
   return (
     <>
-      <MapContainer center={[31.7917, 7.0926]} zoom={8} zoomControl={false}>
+      <MapContainer
+        center={coords === null ? userCoords : coords[0]}
+        zoom={8}
+        zoomControl={false}>
         {/* zoom controlls */}
         <ZoomControl position="bottomright" />
 
@@ -48,7 +50,11 @@ export default function Map() {
             }}
           />
           {/* export button */}
-          <button className="export" onClick={handlePolygonComplete}>
+          {/* if there is no cords the button is disabled */}
+          <button
+            className="export"
+            onClick={handlePolygonComplete}
+            disabled={coords === null ? true : false}>
             Finish Drawing
           </button>
         </FeatureGroup>
