@@ -10,9 +10,10 @@ To use Geo Sketch, simply select the desired shape from the toolbar on the left 
 
 If you find any bugs or issues with the app, please feel free to open an issue or submit a pull request.
 
-## License
+## Preview
+
+![Geo Sketch Preview]('./images/preview01.png')
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
