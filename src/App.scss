@@ -3,6 +3,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  color: #333;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -14,7 +16,7 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+  -moz-appearance: textfield; 
 }
 // default lisr styles
 ul {
